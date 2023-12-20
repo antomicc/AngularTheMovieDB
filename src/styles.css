@@ -2,3 +2,63 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+html {
+    height: 100vh;
+}
+
+.button {
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 0.7em 1.2em;
+    border-radius: 1em;
+    background-color: transparent;
+    transition: all 0.5s ease-in-out;
+}
+.button:hover {
+    background-color: #0f3a66;
+}
+
+.button-detalles {
+    font-size: 0.7em;
+    border: white 0.8px solid;
+    border-radius: 8px;
+    font-weight: 300;
+    padding: 0.2em 0.4em;
+    color: white;
+    transition: all 0.4s ease-in-out;
+}
+.button-detalles:hover {
+    border: #F28500 0.8px solid;
+    color: #F28500;
+}
+
+
+
+h1 {
+    font-size: 2.4em;
+    font-weight: 700;
+}
+h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+}
+h3 {
+    font-size: 1.4em;
+    font-weight: 500;
+}
+h4 {
+    font-size: 0.85em;
+    font-weight: 500;
+}
+h5 {
+    font-size: 0.69em;
+    font-weight: 300;
+}
+
+p {
+    font-size: 1em;
+    font-weight: 400;
+}

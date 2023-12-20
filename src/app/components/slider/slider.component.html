@@ -1,0 +1,27 @@
+<div class="slides h-2/5">
+    <!-- Slider main container -->
+<div class="swiper h-full">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        @for (movie of movies; track movie.id) {
+            <div 
+            [ngStyle]="{
+            'background-size':'cover',
+            'background-image': 'url(https://image.tmdb.org/t/p/w500'+movie.backdrop_path + ')'
+            }"
+            class="swiper-slide relative rounded-2xl">
+                <div class="description">
+                    <h3>{{movie.title}} <button class="button-detalles"> Detalles </button></h3>
+                    <p>{{movie.overview | slice: 0:140}}...</p>
+                </div>
+            </div>
+        }
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</div>
