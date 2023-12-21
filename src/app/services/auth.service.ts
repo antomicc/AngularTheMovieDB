@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,14 @@ export class AuthService {
       alert("Ingreso Correcto")
       localStorage.setItem('logged', 'true');
       this.router.navigate(["/home"]);
+    }
+  }
+
+  public isLogged():boolean {
+    if(localStorage.getItem("logged") === 'true'){
+      return true;
+    } else {
+      return false;
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -13,11 +13,14 @@ import { AuthService } from './services/auth.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  authorized?: string | null;
 
-  constructor(private authLogin:AuthService){}
+  //loginService?: boolean;
+  //authorized: boolean = false;
+
+  constructor( public loginService: AuthService){}
 
   ngOnInit(): void {
-    this.authorized = localStorage.getItem("logged")
+    //this.authorized = localStorage.getItem("logged");
+    //this.authorized = this.authLogin.isLogged();
   }
 }
