@@ -1,0 +1,14 @@
+<main class="h-full w-[95%] mx-auto">
+    <form [formGroup]="loginForm" (ngSubmit)="submitFormulario()" class="form">
+        <h1>Bienvenido/a</h1>
+        <div class="input">
+            <label for="user">Usuario</label>
+            <input formControlName="user" type="text" name="user" id="user" placeholder="Usuario" required="">
+        </div>
+        <div class="input">
+            <label for="pass">Contraseña</label>
+            <input formControlName="password" type="password" name="pass" id="pass" placeholder="Contraseña" required="">
+        </div>
+        <button class="button-forms">Ingresar</button>
+    </form>
+</main>

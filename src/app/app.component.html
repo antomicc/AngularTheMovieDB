@@ -1,4 +1,6 @@
 <div class="container h-full">
     <router-outlet></router-outlet>
 </div>
-<app-navbar class="fixed max-w-screen-md bottom-0 w-full block"></app-navbar>
+@if (authorized === "true") {
+    <app-navbar class="fixed max-w-screen-md bottom-0 w-full block bg-white dark:bg-blue-poly text-blue-poly dark:text-white z-50"></app-navbar>
+}

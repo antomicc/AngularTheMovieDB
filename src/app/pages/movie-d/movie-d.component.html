@@ -1,1 +1,53 @@
-<p>movie-d works!</p>
+<main class="h-[90%] w-[95%] mx-auto py-4 overflow-x-hidden" >
+    <div class="detail-container">
+        <img class="w-full md:w-2/4" [src]="'https://image.tmdb.org/t/p/w500'+movieDetail?.poster_path" alt={{movieDetail?.title}}>
+        <div class="py-2 title-container flex flex-col justify-start gap-2 items-start">
+            <h2> {{movieDetail?.title}} </h2>
+            <h3> Titulo original: {{movieDetail?.original_title}}</h3>
+            <div class="details">
+                <span> Puntuanción: {{movieDetail?.vote_average}} </span>
+                <h3>Sinopsis</h3> 
+                <p>
+                    {{movieDetail?.overview}}
+                </p>  
+            </div>
+            <hr>
+            <div class="rating-you">
+                <h3> ¿Que te parecio a ti? </h3>
+                <p-rating [cancel]="false"></p-rating>
+            </div>
+            <div class="reparto">
+            <h3> Reparto </h3>
+                <div class="reparto-slider py-4 w-full ">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            @for (cast of movieCredits?.cast; track cast.cast_id) {
+                                <div class="swiper-slide">
+                                    <img class="w-36 rounded-full h-36 object-cover object-center" [src]="'https://image.tmdb.org/t/p/w500'+cast.profile_path" alt={{cast.name}}>
+                                    <br>
+                                    <h3 class="text-center"> {{cast.name}} </h3>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="related">
+                <h3>Relacionado</h3>
+                <div class="movies-slider py-4 w-full ">
+                    <div class="swiper swiper-related">
+                        <div class="swiper-wrapper">
+                            @for (movie of moviesRelated; track movie.id) {
+                                <div class="swiper-slide" >
+                                    <img class="object-cover object-center" [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path" alt={{movie.title}}>
+                                    <br>
+                                    <h3 class="text-center" (click)="onClickdetailView(movie)"> {{movie.title}} </h3>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

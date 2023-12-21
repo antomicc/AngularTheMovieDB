@@ -1,7 +1,10 @@
-<main class="h-full">
+<main class="h-full w-[95%] mx-auto">
     <h2 class="py-4">En Cartelera</h2>
-    @if (movies.length > 0) {
-        <app-slider  [movies]="movieSlides" ></app-slider>
+    @if (moviesNow.length > 0) {
+        <app-slider  [movies]="movieSlidesNow" ></app-slider>
     }
     <h2 class="py-4">Mejor valorados</h2>
+    @if (moviesTopRated.length > 0) {
+        <app-slider-top-rated [movies]="movieTopRatedSlidesNow"></app-slider-top-rated>
+    }
 </main>

@@ -4,26 +4,27 @@ import { Movie } from '../../interfaces/movies.interface';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 
+
 @Component({
-  selector: 'app-slider',
+  selector: 'app-slider-top-rated',
   standalone: true,
-  imports: [ CommonModule, RouterModule],
-  templateUrl: './slider.component.html',
-  styleUrl: './slider.component.css'
+  imports: [ CommonModule, RouterModule ],
+  templateUrl: './slider-top-rated.component.html',
+  styleUrl: './slider-top-rated.component.css'
 })
-export class SliderComponent implements OnInit, AfterViewInit {
+export class SliderTopRatedComponent implements OnInit, AfterViewInit {
   @Input() movies?:Movie[];
-  
+
+
   movieSwiper: Swiper | any;
   movie:Movie[] = []
-
   constructor( private router:Router ) {}
-  
+
   ngOnInit(): void {
     //console.log(this.movies);
   }
   ngAfterViewInit(): void {
-    this.movieSwiper = new Swiper('.swiper-container-1', {
+    this.movieSwiper = new Swiper('.swiper-container-2', {
       loop: true,
     })
   }

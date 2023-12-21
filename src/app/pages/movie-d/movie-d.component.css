@@ -1,0 +1,16 @@
+.detail-container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 670px) {
+    .detail-container {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+
+.swiper-wrapper {
+    width: 100vw;
+}

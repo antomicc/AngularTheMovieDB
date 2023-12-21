@@ -1,1 +1,15 @@
-<p>top-rated works!</p>
+<main class="h-full w-[95%] mx-auto">
+    <h2 class="py-4"> Mas Populares </h2>
+    <div class="grid grid-cols-2 row auto gap-4 md:grid-cols-3">
+        @for (movie of moviesPopular; track movie.id) {
+            <div class="movie-poster">
+                <img [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path" alt={{movie.title}}>
+                <h3>{{movie.title}}</h3>
+                <div class="rating">
+                    <span>Puntuancion: {{movie.vote_average}}</span>
+                    <button class="button-detalles" (click)="onClickdetailView(movie)"> Detalle </button>
+                </div>
+            </div>
+        }
+    </div>
+</main>
